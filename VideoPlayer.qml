@@ -11,8 +11,8 @@ Video {
     property string movie
 
     property int dayMedia: 9
-    property int sunsetMedia: 5
-    property int nightMedia: 3
+    property int sunsetMedia: 3
+    property int nightMedia: 4
 
     property int curMedia: 3
 
@@ -35,7 +35,7 @@ Video {
         //check via time
         console.log("Video: setting Source");
         setDaytime();
-        root.source = prefix + daytime + "/" + Math.floor((Math.random() * curMedia) + 1) + ".mov"
+        root.source = prefix + daytime + "/" + Math.floor((Math.random() * curMedia) + 1) + ".mp4"
         console.log("Video Source: " + root.source);
     }
 

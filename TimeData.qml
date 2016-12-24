@@ -23,7 +23,6 @@ Item {
         onTriggered: {
             updateTime();
             updateDate();
-            console.log(root.time);
         }
     }
 }

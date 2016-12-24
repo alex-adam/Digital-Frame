@@ -49,7 +49,7 @@ Item {
         interval: 6000
         onTriggered: {
             if (list.count === 0) {
-                console.log("Attempt to reload")
+                console.log("Attempt to reload due to error")
                 errorTimer.stop()
                 feedModel.reload();
             }
@@ -58,7 +58,7 @@ Item {
 
     Timer {
         running: true; repeat: true;
-        interval: 300000
+        interval: 1800000
         onTriggered: {
             console.log("Reloading news due to timer");
             feedModel.reload();
@@ -69,7 +69,7 @@ Item {
         id: _background
 
         anchors.fill: root
-        opacity: 0.35
+        opacity: 0.4
     }
 
     ListView {

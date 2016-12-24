@@ -1,10 +1,18 @@
 import QtQuick 2.6
 import QtQuick.Window 2.2
 
-import QtMultimedia 5.5
+// add animations for opening panels
+// add nightmode: after 10pm - 6pm black screen
+// add icons on corners for opening screens
+// TimeData as singleton
+// news: automatic scrolling
+
+// Settings panel:
+// see logs, variables like time, daytime, and restart video playback
+// always show time/date
+// always show weather
 
 Window {
-
     visible: true
 
     width: 800
@@ -50,7 +58,6 @@ Window {
             opacity: 0.0
         }
 
-
         Rectangle {
             id: _leftTouch
 
@@ -70,7 +77,6 @@ Window {
                     _newsArea.opacity === 0.0 ? _newsArea.opacity = 1.0 : _newsArea.opacity = 0.0;
                 }
             }
-
         }
 
         Rectangle {
@@ -92,8 +98,6 @@ Window {
                     _rightSide.opacity === 0.0 ? _rightSide.opacity = 1.0 : _rightSide.opacity = 0.0;
                 }
             }
-
         }
     }
-
 }

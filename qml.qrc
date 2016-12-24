@@ -3,7 +3,6 @@
         <file>main.qml</file>
         <file>WeatherData.qml</file>
         <file>NewsData.qml</file>
-        <file>CalenderData.qml</file>
         <file>TimeData.qml</file>
         <file>NewsDelegate.qml</file>
         <file>WeatherDelegate.qml</file>

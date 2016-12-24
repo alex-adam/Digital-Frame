@@ -13,11 +13,22 @@ Item {
     }
 
     Text {
-        id: _time
+        id: _date
 
         anchors.top: root.top
         anchors.right: root.right
         anchors.margins: 20
+        color: "#333333"
+
+        text: _timeData.weekday + ", " + _timeData.date
+    }
+
+    Text {
+        id: _time
+
+        anchors.top: _date.bottom
+        anchors.right: root.right
+        anchors.rightMargin: 17
 
         text: _timeData.time
 
@@ -25,22 +36,11 @@ Item {
         color: "#333333"
     }
 
-    Text {
-        id: _date
-
-        anchors.top: _time.bottom
-        anchors.right: root.right
-        anchors.rightMargin: 20
-        color: "#333333"
-
-        text: _timeData.weekday + ", " + _timeData.date
-    }
-
     WeatherDelegate {
-        anchors.top: _date.bottom
-        anchors.topMargin: 20
+        anchors.bottom: root.bottom
+        anchors.bottomMargin: 20
 
         width: parent.width
-        height: 200
+        height: 50
     }
 }

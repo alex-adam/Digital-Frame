@@ -4,13 +4,13 @@ import QtQuick.XmlListModel 2.0
 Item {
     id: root
 
-    property string maxTemp: "value"
-    property string minTemp: "value"
-    property string curTemp: "value"
-    property string condition: "value"
-    property string weatherId: "value"
+    property string maxTemp
+    property string minTemp
+    property string curTemp
+    property string condition
+    property string weatherId
 
-    property string currentFeed: "api.openweathermap.org/data/2.5/weather?q=Sunnyvale,CA&mode=xml&"
+    property string currentFeed: "api.openweathermap.org/data/2.5/weather?q=SanJose,CA&mode=xml&"
     property bool loading: feedModel.status === XmlListModel.Loading
 
     property string appKey: "appid=0196e2962586661b1472e4254bb2ba9c"
