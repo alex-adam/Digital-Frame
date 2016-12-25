@@ -1,7 +1,7 @@
 import QtQuick 2.6
 import QtQuick.Window 2.2
 
-// add animations for opening panels
+
 // add nightmode: after 10pm - 6pm black screen
 // add icons on corners for opening screens
 // TimeData as singleton
@@ -35,7 +35,7 @@ Window {
         Item {
             id: _newsArea
 
-            anchors.left: _window.left
+            x: -width
             anchors.top: _window.top
             height: _window.height
             width: _window.width / 2
@@ -44,24 +44,17 @@ Window {
                 anchors.fill: parent
             }
 
-            opacity: 0.0
-        }
-
-        RightSide {
-            id: _rightSide
-
-            anchors.right: _window.right
-            anchors.top: _window.top
-            height: _window.height
-            width: _window.width / 3.5
-
-            opacity: 0.0
+            Behavior on x {
+                NumberAnimation {
+                    duration: 250; easing.type: Easing.OutCubic
+                }
+            }
         }
 
         Rectangle {
             id: _leftTouch
 
-            anchors.left: _window.left
+            x: anchors.left
             anchors.verticalCenter: _window.verticalCenter
             height: _window.height / 2
             width: _window.width / 6
@@ -74,7 +67,24 @@ Window {
                 anchors.fill: parent
 
                 onClicked: {
-                    _newsArea.opacity === 0.0 ? _newsArea.opacity = 1.0 : _newsArea.opacity = 0.0;
+                    _newsArea.x === 0 ? _newsArea.x = -_newsArea.width : _newsArea.x = 0;
+                }
+            }
+        }
+
+
+
+        RightSide {
+            id: _rightSide
+
+            x: _window.width
+            anchors.top: _window.top
+            height: _window.height
+            width: _window.width / 3.5
+
+            Behavior on x {
+                NumberAnimation {
+                    duration: 250; easing.type: Easing.OutCubic
                 }
             }
         }
@@ -95,7 +105,7 @@ Window {
                 anchors.fill: parent
 
                 onClicked: {
-                    _rightSide.opacity === 0.0 ? _rightSide.opacity = 1.0 : _rightSide.opacity = 0.0;
+                    _rightSide.x === _window.width ? _rightSide.x = _window.width - _rightSide.width : _rightSide.x = _window.width;
                 }
             }
         }
